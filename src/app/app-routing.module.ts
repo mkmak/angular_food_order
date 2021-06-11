@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddAddressComponent } from './add-address/add-address.component';
+import { AddCardComponent } from './add-card/add-card.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { CartComponent } from './cart/cart.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'track-order', canActivate: [IsloginGuard], component: TrackOrderComponent },
   { path: 'food-list', canActivate: [IsloginGuard], component: FoodListComponent },
   { path: 'card-details', canActivate: [IsloginGuard], component: CardDetailsComponent },
+  { path: 'add-card', canActivate: [IsloginGuard], component: AddCardComponent },
   { path: 'address-list', canActivate: [IsloginGuard], component: AddressListComponent },
   { path: 'add-address', canActivate: [IsloginGuard], component: AddAddressComponent },
   { path: 'edit-address/:id', canActivate: [IsloginGuard], component: EditAddressComponent },

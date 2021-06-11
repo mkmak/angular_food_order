@@ -1,1 +1,20 @@
-<p>card-details works!</p>
+<div class="container">
+    <div class="container text-center mt-5">
+        <button class="btn btn-outline-primary" type="button" (click)="toAddCard()">Add New Card</button>
+    </div>
+    <div class="card-deck mt-3 text-center row justify-content-center">
+        <div *ngFor="let card of cardList">
+            <div class="card ml-4 mt-3 mb-3" style="width: 300px;">
+                <div class="card-body">
+                    <h4 class="card-title">Card</h4>
+                    <div class="card-text mb-2" style="color: grey;">{{ card.name }}</div>
+                    <div class="card-text mb-2">Card number: {{ card.number }}</div>
+                    <div class="card-text mb-2">Security code: {{ card.code }}</div>
+                    <div class="card-text mb-3">Expires: {{ card.month }}, {{ card.year }}</div>
+                    <div class="mb-3"><button class="btn btn-outline-primary" type="button" (click)="toEditCard(card.id)">Edit</button></div>
+                    <button class="btn btn-danger" type="button" (click)="deleteCard(card.id)">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
