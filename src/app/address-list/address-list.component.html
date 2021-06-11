@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="container text-center mt-5">
+        <button class="btn btn-outline-primary" type="button" (click)="toAddAddress()">Add New Address</button>
+    </div>
+    <div class="card-deck mt-3 text-center row justify-content-center">
+        <div *ngFor="let address of addressList">
+            <div class="card ml-4 mt-3 mb-3" style="width: 300px;">
+                <div class="card-body">
+                    <h4 class="card-title">Address</h4>
+                    <div class="card-text mb-2" style="color: grey;">{{ address.name }}</div>
+                    <div class="card-text mb-3">{{ address.address }}</div>
+                    <div class="mb-3"><button class="btn btn-outline-primary" type="button" (click)="toEditAddress(address.id)">Edit</button></div>
+                    <button class="btn btn-danger" type="button" (click)="deleteAddress(address.id)">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

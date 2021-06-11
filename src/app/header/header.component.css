@@ -1,0 +1,7 @@
+.header-link {
+    color: grey;
+}
+
+.header-link:hover {
+    color: black;
+}

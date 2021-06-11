@@ -1,0 +1,8 @@
+#forgot-password-btn {
+    color: blue;
+}
+
+#forgot-password-btn:hover {
+    color: #000099;
+    text-decoration: underline;
+}

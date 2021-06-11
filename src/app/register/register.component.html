@@ -1,0 +1,51 @@
+<div class="container w-50 mt-5">
+    <div class="card">
+        <div class="card-header"><h5 class="ml-3">Register</h5></div>
+        <div class="card-body">
+            <form [formGroup]="fg" class="row justify-content-center" (ngSubmit)="registerUser()">
+                <table>
+                    <tr class="text-right">
+                        <td class="small text-danger" colspan="2">{{ errorMsg }}</td>
+                    </tr>
+                    <tr class="text-right">
+                        <td class="pr-4 pt-3">Name</td>
+                        <td class="pt-3"><input class="form-control" type="text" formControlName="name"></td>
+                    </tr>
+                    <tr class="text-right" *ngIf="fg.get('name')?.touched && fg.get('name').errors?.required">
+                        <td class="small text-danger" colspan="2">Name is required</td>
+                    </tr>
+                    <tr class="text-right">
+                        <td class="pr-4 pt-3">E-Mail Address</td>
+                        <td class="pt-3"><input class="form-control" type="email" formControlName="email"></td>
+                    </tr>
+                    <tr class="text-right" *ngIf="fg.get('email')?.touched && fg.get('email').errors?.required">
+                        <td class="small text-danger" colspan="2">Email is required</td>
+                    </tr>
+                    <tr class="text-right" *ngIf="fg.get('email')?.touched && fg.get('email').errors?.email">
+                        <td class="small text-danger" colspan="2">Invalid email format. eg. jogn.smith@abc.com</td>
+                    </tr>
+                    <tr class="text-right">
+                        <td class="pr-4 pt-3">Password</td>
+                        <td class="pt-3"><input class="form-control" type="password" formControlName="password"></td>
+                    </tr>
+                    <tr class="text-right" *ngIf="fg.get('password')?.touched && fg.get('password').errors?.required">
+                        <td class="small text-danger" colspan="2">Password is required</td>
+                    </tr>
+                    <tr class="text-right">
+                        <td class="pr-4 pt-3">Confirm Password</td>
+                        <td class="pt-3"><input class="form-control" type="password" formControlName="cpassword"></td>
+                    </tr>
+                    <tr class="text-right" *ngIf="fg.get('cpassword')?.touched && fg.get('cpassword').errors?.required">
+                        <td class="small text-danger" colspan="2">Confirm password is required</td>
+                    </tr>
+                    <tr class="text-right" *ngIf="fg.get('cpassword')?.touched && fg.errors?.mismatch && !fg.get('cpassword').errors?.required">
+                        <td class="small text-danger" colspan="2">Password mismatch</td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="pt-3" colspan="2"><input class="btn btn-primary" type="submit" value="Register"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

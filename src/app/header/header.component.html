@@ -1,0 +1,19 @@
+<nav class="navbar border">
+    <span class="navbar-brand mb-0"><h2 routerLink="food-list">FoodOrb</h2></span>
+    <div class="navbar-toggler">
+        <div *ngIf="isLogin; else loginHeader">
+            <a class="mr-3 header-link" routerLink="cart">Cart</a>
+            <a class="mr-5 header-link dropdown-toggle" data-toggle="dropdown">{{ currUser.name }}</a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item pt-2 pb-2" routerLink="track-order">TrackOrder</a>
+                <a class="dropdown-item pt-2 pb-2" routerLink="profile">Profile</a>
+                <a class="dropdown-item pt-2 pb-2" routerLink="setting">Setting</a>
+                <a class="dropdown-item pt-2 pb-2" (click)="logoutUser()">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<ng-template #loginHeader>
+    <a class="mr-3 header-link" routerLink="login">Login</a>
+    <a class="mr-5 header-link" routerLink="register">Register</a>
+</ng-template>

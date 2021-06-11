@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "restaurantName": "Reddys Biryani Zone",
+        "restaurantType": "Indian, Restaurant",
+        "restaurantRating": 4,
+        "price": 190,
+        "foodName": "Roasted Chicken Biryani",
+        "foodImage": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+    },
+    {
+        "id": 2,
+        "restaurantName": "Kabablo",
+        "restaurantType": "Indian, Restaurant",
+        "restaurantRating": 3.2,
+        "price": 260,
+        "foodName": "Cajun Spiced Chicken",
+        "foodImage": "https://images.unsplash.com/photo-1543340904-0b1d843bccda?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+    },
+    {
+        "id": 3,
+        "restaurantName": "The Good Bowl",
+        "restaurantType": "Fast Food, North Indian, Restaurant",
+        "restaurantRating": 3,
+        "price": 200,
+        "foodName": "Immunity Booster Chole Rice Bowl",
+        "foodImage": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=440&q=80"
+    },
+    {
+        "id": 4,
+        "restaurantName": "Home Kitchen Services",
+        "restaurantType": "North Indian, Restaurant",
+        "restaurantRating": 4.5,
+        "price": 125,
+        "foodName": "Chicken Fry",
+        "foodImage": "https://images.unsplash.com/photo-1539102113920-32874e87fc97?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+    },
+    {
+        "id": 5,
+        "restaurantName": "Hotel Shalimar",
+        "restaurantType": "Indian, Restaurant",
+        "restaurantRating": 3.2,
+        "price": 100,
+        "foodName": "Chicken Dry Fry",
+        "foodImage": "https://images.unsplash.com/photo-1546630287-67d90f4445f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=798&q=80"
+    }
+]
