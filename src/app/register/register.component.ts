@@ -33,7 +33,6 @@ export class RegisterComponent implements OnInit {
         if(users.filter((user: any) => user.email === this.fg.get('email').value).length > 0) 
           this.errorMsg = 'Account already exist. Please login.';
         else {
-          // add new user to server
           this.userService.addUser({
             name: this.fg.get('name').value,
             email: this.fg.get('email').value,

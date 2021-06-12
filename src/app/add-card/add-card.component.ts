@@ -31,22 +31,21 @@ export class AddCardComponent implements OnInit {
 
   addCard() {
     if(this.fg.valid) {
-      this.userService.currUser.subscribe(user => {
-        this.cardService.getCardList().subscribe(cards => {
-          if(cards.filter(card => 
-            (card.number === this.fg.get('number').value && card.userId === user.id)).length > 0)
-            this.errorMsg = 'You have already added this address!';
-          else {
-            this.cardService.addCard({
-              userId: user.id,
-              name: this.fg.get('name').value,
-              number: this.fg.get('number').value,
-              month: this.fg.get('month').value,
-              year: this.fg.get('year').value,
-              code: this.fg.get('code').value
-            }).subscribe(card => this.router.navigate(['card-details']));
-          }
-        });
+      this.cardService.getCardList().subscribe(cards => {
+        let currUserId = this.userService.currUser.getValue().id;
+        if(cards.filter(card => 
+          (card.number === this.fg.get('number').value && card.userId === currUserId)).length > 0)
+          this.errorMsg = 'You have already added this address!';
+        else {
+          this.cardService.addCard({
+            userId: currUserId,
+            name: this.fg.get('name').value,
+            number: this.fg.get('number').value,
+            month: this.fg.get('month').value,
+            year: this.fg.get('year').value,
+            code: this.fg.get('code').value
+          }).subscribe(card => this.router.navigate(['card-details']));
+        }
       });
     }
   }
