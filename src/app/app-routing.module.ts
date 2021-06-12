@@ -6,6 +6,7 @@ import { AddressListComponent } from './address-list/address-list.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { CartComponent } from './cart/cart.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
+import { EditCardComponent } from './edit-card/edit-card.component';
 import { FoodListComponent } from './food-list/food-list.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { IsloginGuard } from './guards/islogin.guard';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'food-list', canActivate: [IsloginGuard], component: FoodListComponent },
   { path: 'card-details', canActivate: [IsloginGuard], component: CardDetailsComponent },
   { path: 'add-card', canActivate: [IsloginGuard], component: AddCardComponent },
+  { path: 'edit-card/:id', canActivate: [IsloginGuard], component: EditCardComponent },
   { path: 'address-list', canActivate: [IsloginGuard], component: AddressListComponent },
   { path: 'add-address', canActivate: [IsloginGuard], component: AddAddressComponent },
   { path: 'edit-address/:id', canActivate: [IsloginGuard], component: EditAddressComponent },

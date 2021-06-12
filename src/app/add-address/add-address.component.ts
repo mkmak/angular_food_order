@@ -31,7 +31,7 @@ export class AddAddressComponent implements OnInit {
     if(this.fg.valid) {
       this.addressService.getAddressList().subscribe(addresses => {
         if(addresses.filter((address: Address) => address.address === this.fg.get('address').value).length > 0)
-          this.errorMsg = 'Address already exist!';
+          this.errorMsg = 'You have already added this address!';
         else {
           this.userService.currUser.subscribe(user => {
             this.addressService.addAddress({

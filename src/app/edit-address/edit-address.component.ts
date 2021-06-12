@@ -33,8 +33,13 @@ export class EditAddressComponent implements OnInit {
   editAddress() {
     this.address.name = this.fg.get('name').value;
     this.address.address = this.fg.get('address').value;
-    this.addressService.editAddress(this.address).subscribe(address => {
-      this.router.navigate(['address-list']);
+    this.addressService.getAddressList().subscribe(addresses => {
+      if(addresses.filter(address => 
+        (address.userId === this.address.userId && address.address === this.address.address)).length > 0)
+        this.errorMsg = 'You have already added this address!';
+      else
+      this.addressService.editAddress(this.address).subscribe(address => 
+        this.router.navigate(['address-list']));
     });
   }
 }

@@ -19,6 +19,7 @@ import { AddAddressComponent } from './add-address/add-address.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { AddCardComponent } from './add-card/add-card.component';
+import { EditCardComponent } from './edit-card/edit-card.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AddCardComponent } from './add-card/add-card.component';
     AddressListComponent,
     AddAddressComponent,
     EditAddressComponent,
-    AddCardComponent
+    AddCardComponent,
+    EditCardComponent
   ],
   imports: [
     BrowserModule,

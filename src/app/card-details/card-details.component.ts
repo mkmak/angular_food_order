@@ -29,10 +29,10 @@ export class CardDetailsComponent implements OnInit {
   }
 
   toEditCard(id: any) {
-
+    this.router.navigate(['edit-card', id]);
   }
 
   deleteCard(id: any) {
-
+    this.cardService.deleteCard(id).subscribe(card => this.ngOnInit());
   }
 }
