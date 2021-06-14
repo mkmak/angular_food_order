@@ -1,1 +1,24 @@
-<p>track-order works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-outline-dark">Home</button>
+        </div>
+        <div class="col-sm-10">
+            <div *ngFor="let order of orders">
+                <div class="card mb-5">
+                    <div class="card-body">
+                        <div>Order Details</div>
+                        <div style="color: grey;">Your Order Placed Successfully</div>
+                        <div class="mt-2" style="font-weight: bold; font-size: large;">Status:</div>
+                        <div class="mb-2" style="font-weight: bold; font-size: large;">{{ order.status }}</div>
+                        <div>Remaining time:</div>
+                        <div class="mb-2">{{ order.timeLeft }}</div>
+                        <p>Your food is being cooked sit back and relax while our partner deliver hot and yummy food at your doorstep.</p>
+                        <p>Order ID: {{ order.id }}</p>
+                        <button type="button" class="btn btn-outline-danger" (click)="cancelOrder(order)">Cancel Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

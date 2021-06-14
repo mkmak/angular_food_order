@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Food } from '../interfaces/Food';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class FoodService {
 
   constructor(private http: HttpClient) { }
 
-  getFoodList(): Observable<any> {
-    return this.http.get(this.baseUrl);
+  getFoodList() {
+    return this.http.get<[Food]>(this.baseUrl);
   }
 }

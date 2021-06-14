@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../interfaces/User';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  user: User|null = null;
+
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.user = this.userService.currUser.getValue();
   }
 
+  toEditUser() {
+    this.router.navigate(['edit-user']);
+  }
 }

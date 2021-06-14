@@ -1,0 +1,23 @@
+<div class="container w-50 mt-5 mb-5">
+    <h4 class="text-center">Edit Profile</h4>
+    <form [formGroup]="fg" (ngSubmit)="editUser()">
+        <div class="mt-3">User Id:</div>
+        <input class="form-control mt-2" type="text" disabled [value]="user?.id">
+        <div class="mt-3">Email:</div>
+        <input class="form-control mt-2" type="text" disabled [value]="user?.email">
+        <div class="mt-3">Name:</div>
+        <input class="form-control mt-2" type="text" formControlName="name">
+        <div *ngIf="fg.get('name')?.touched && fg.get('name')?.errors?.required" class="small text-danger text-right">
+            Name is required
+        </div>
+        <div class="mt-3">Phone:</div>
+        <input class="form-control mt-2" type="text" formControlName="phone">
+        <div class="mt-3">Profession:</div>
+        <input class="form-control mt-2" type="text" formControlName="profession">
+        <div class="mt-3">Interests:</div>
+        <input class="form-control mt-2" type="text" formControlName="interest" placeholder="Comma separated for multiple interests">
+        <div class="mt-3">Profile Image:</div>
+        <input class="form-control mt-2" type="text" formControlName="image">
+        <input class="btn btn-primary mt-3" type="submit" value="Update Profile">
+    </form>
+</div>

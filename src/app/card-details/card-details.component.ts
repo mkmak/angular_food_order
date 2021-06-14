@@ -18,7 +18,7 @@ export class CardDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.cardService.getCardList().subscribe(cards => {
-      let currUserId = this.userService.currUser.getValue().id;
+      let currUserId = this.userService.currUser.getValue()?.id;
       this.cardList = cards.filter(card => card.userId === currUserId);
     });
   }

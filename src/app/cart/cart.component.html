@@ -1,1 +1,26 @@
-<p>cart works!</p>
+<div class="container mt-5">
+    <h3>Contents of your cart.</h3>
+    <div>Total Amount: USD$</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Order</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let food of cart">
+                <td>{{ food.id }}</td>
+                <td>{{ food.foodName }}</td>
+                <td>{{ food.price | currency }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">Total</td>
+                <td>{{ total | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" (click)="placeOrder()">Place Order</button>
+    <button type="button" class="btn btn-outline-dark ml-3" (click)="toFoodList()">Home</button>
+</div>

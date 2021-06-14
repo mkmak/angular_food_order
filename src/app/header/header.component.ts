@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../interfaces/User';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,12 +11,7 @@ import { UserService } from '../services/user.service';
 export class HeaderComponent implements OnInit {
 
   isLogin = false;
-  currUser = {
-    id: null,
-    name: null,
-    email: null,
-    password: null
-  };
+  currUser: User|null = null;
 
   constructor(private userService: UserService, private router: Router) { }
 

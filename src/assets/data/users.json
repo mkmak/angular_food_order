@@ -3,6 +3,11 @@
         "id": 1,
         "name": "Mike",
         "email": "a@b.c",
-        "password": "password"
+        "password": "asd",
+        "phone": 1234567890,
+        "profession": "Software Engineer",
+        "interest": ["Basketball", "Ice Cream", "Egg Fried Rice"],
+        "image": "../assets/images/blank_profile.png",
+        "cart": [1, 2, 5]
     }
 ]

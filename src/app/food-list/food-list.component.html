@@ -11,7 +11,7 @@
                     <p class="card-text small" style="color: grey;">{{ food.restaurantType }} | Rating: {{ food.restaurantRating }} | {{ food.price | currency }}</p>
                     <p class="card-text">{{ food.foodName }}</p>
                     <a data-toggle="modal" data-target="#confirmBox" class="btn btn-primary" (click)="setSelectFood(food)">Add to Cart</a>
-                    <a href="#" class="btn btn-primary ml-2">Buy/Order</a>
+                    <a class="btn btn-primary ml-2" (click)=buyOrder(food)>Buy/Order</a>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Add to Cart</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" (click)="addToCart(selectFood)">Add to Cart</button>
             </div>
         </div>
     </div>

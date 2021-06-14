@@ -3,7 +3,7 @@
     <div class="navbar-toggler">
         <div *ngIf="isLogin; else loginHeader">
             <a class="mr-3 header-link" routerLink="cart">Cart</a>
-            <a class="mr-5 header-link dropdown-toggle" data-toggle="dropdown">{{ currUser.name }}</a>
+            <a class="mr-5 header-link dropdown-toggle" data-toggle="dropdown">{{ currUser?.name }}</a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item pt-2 pb-2" routerLink="track-order">TrackOrder</a>
                 <a class="dropdown-item pt-2 pb-2" routerLink="profile">Profile</a>

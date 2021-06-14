@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../interfaces/User';
 import { UserService } from '../services/user.service';
 import { MustMatchValidator } from './must-match-validator';
 
@@ -33,11 +34,17 @@ export class RegisterComponent implements OnInit {
         if(users.filter((user: any) => user.email === this.fg.get('email').value).length > 0) 
           this.errorMsg = 'Account already exist. Please login.';
         else {
-          this.userService.addUser({
+          let currUser = {
             name: this.fg.get('name').value,
             email: this.fg.get('email').value,
-            password: this.fg.get('password').value
-          }).subscribe(user => {
+            password: this.fg.get('password').value,
+            phone: null,
+            profession: '',
+            interest: [],
+            image: '../assets/images/blank_profile.png',
+            cart: []
+          };
+          this.userService.addUser(currUser).subscribe(user => {
             this.userService.isLogin.next(true);
             this.userService.currUser.next(user);
             this.router.navigate(['food-list']);

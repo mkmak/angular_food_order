@@ -7,6 +7,7 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 import { CartComponent } from './cart/cart.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { EditCardComponent } from './edit-card/edit-card.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 import { FoodListComponent } from './food-list/food-list.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { IsloginGuard } from './guards/islogin.guard';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'cart', canActivate: [IsloginGuard], component: CartComponent },
   { path: 'setting', canActivate: [IsloginGuard], component: SettingComponent },
   { path: 'profile', canActivate: [IsloginGuard], component: ProfileComponent },
+  { path: 'edit-user', canActivate: [IsloginGuard], component: EditUserComponent },
   { path: 'track-order', canActivate: [IsloginGuard], component: TrackOrderComponent },
   { path: 'food-list', canActivate: [IsloginGuard], component: FoodListComponent },
   { path: 'card-details', canActivate: [IsloginGuard], component: CardDetailsComponent },

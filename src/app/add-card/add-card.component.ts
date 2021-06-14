@@ -32,7 +32,7 @@ export class AddCardComponent implements OnInit {
   addCard() {
     if(this.fg.valid) {
       this.cardService.getCardList().subscribe(cards => {
-        let currUserId = this.userService.currUser.getValue().id;
+        let currUserId = this.userService.currUser.getValue()?.id;
         if(cards.filter(card => 
           (card.number === this.fg.get('number').value && card.userId === currUserId)).length > 0)
           this.errorMsg = 'You have already added this address!';

@@ -30,7 +30,7 @@ export class AddAddressComponent implements OnInit {
   addAddress() {
     if(this.fg.valid) {
       this.addressService.getAddressList().subscribe(addresses => {
-        let currUserId = this.userService.currUser.getValue().id;
+        let currUserId = this.userService.currUser.getValue()?.id;
           if(addresses.filter((address: Address) =>
             (address.address === this.fg.get('address').value && address.userId === currUserId)).length > 0)
             this.errorMsg = 'You have already added this address!';

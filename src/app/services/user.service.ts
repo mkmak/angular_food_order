@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { User } from '../interfaces/User';
 
 @Injectable({
   providedIn: 'root'
@@ -8,22 +9,21 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class UserService {
 
   isLogin = new BehaviorSubject<boolean>(false);
-  currUser = new BehaviorSubject<any>({
-    id: null,
-    name: null,
-    email: null,
-    password: null
-  });
+  currUser = new BehaviorSubject<User|null>(null);
 
   baseUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) { }
 
-  getUserList(): Observable<any> {
-    return this.http.get(this.baseUrl);
+  getUserList() {
+    return this.http.get<[User]>(this.baseUrl);
   }
 
   addUser(user: any) {
-    return this.http.post(this.baseUrl, user);
+    return this.http.post<User>(this.baseUrl, user);
+  }
+
+  editUser(user: User) {
+    return this.http.put<User>(this.baseUrl + '/' + user.id, user);
   }
 }

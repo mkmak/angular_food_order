@@ -1,1 +1,41 @@
-<p>profile works!</p>
+<div class="container mt-5 w-50">
+    <div class="row">
+        <div class="col-sm-4">
+            <img [src]="user?.image" alt="Profile image" style="width: 150px; height: 150px;">
+            <div class="mb-4">Interests</div>
+            <div *ngFor="let int of user?.interest">
+                <div style="color: blue;">{{ int }}</div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <ul class="nav nav-tabs nav-justified md-5">
+                <li class="nav-item"><span class="nav-link active">About</span></li>
+                <li class="nav-item"><a class="nav-link"(click)="toEditUser()">Edit</a></li>
+                <li class="nav-item"><span class="nav-link"></span></li>
+                <li class="nav-item"><span class="nav-link"></span></li>
+            </ul>
+            <table class="table table-borderless mt-5">
+                <tr>
+                    <td>User Id</td>
+                    <td>{{ user?.id }}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{ user?.name }}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{ user?.email }}</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>{{ user?.phone }}</td>
+                </tr>
+                <tr>
+                    <td>Profession</td>
+                    <td>{{ user?.profession }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

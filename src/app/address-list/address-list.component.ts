@@ -17,7 +17,7 @@ export class AddressListComponent implements OnInit {
 
   ngOnInit(): void {
     this.addressService.getAddressList().subscribe(addresses => {
-      let currUserId = this.userService.currUser.getValue().id;
+      let currUserId = this.userService.currUser.getValue()?.id;
       this.addressList = addresses.filter((address: Address) => address.userId === currUserId);
     });
   }
